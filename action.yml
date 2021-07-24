@@ -13,8 +13,13 @@ inputs:
     description: Secret GitHub API token to use for making API requests.
     default: ${{ github.token }}
     required: true
+  username:
+    description: The login of the user that initiated the workflow run
+    default: ${{ github.actor }}
+    required: false
   require:
     description: Test whether the user meets the required permission
+    required: false
 
 outputs:
   result:
