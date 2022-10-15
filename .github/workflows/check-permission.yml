@@ -1,21 +1,17 @@
-name: Check User Permission
+name: Check permissions
 
 on:
-  issues:
-    types: [opened, edited]
+  workflow_dispatch:
 
 jobs:
-  check:
+  repositories:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions-cool/check-user-permission@main
-        id: checkUser
-        with:
-          require: 'write'
+    name: Test current main branch
 
-      - name: close
-        if: steps.checkUser.outputs.result == 'false'
-        uses: actions-cool/issues-helper@v2.1.2
+    steps:
+      - name: Check actor permission
+        uses: skjnldsv/check-actor-permission@main
         with:
-          actions: 'close-issue'
-          issue-number: ${{ github.event.issue.number }}
+          require: admin
+      - name: Success
+        run: echo 'Success 🎉'
