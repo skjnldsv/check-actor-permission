@@ -39,7 +39,8 @@ jobs:
         run: npm run build
 
       - name: Check build changes
-        if: matrix.node-version == 18
+        # See https://github.com/skjnldsv/check-actor-permission/blob/main/action.yml#L27
+        if: matrix.node-version == 16
         run: |
           bash -c "[[ ! \"`git status --porcelain `\" ]] || (echo 'Please recompile and commit the assets, see the section \"Show changes on failure\" for details' && exit 1)"
 
