@@ -17,6 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node-version: [14, 16, 18]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
@@ -38,6 +39,7 @@ jobs:
         run: npm run build
 
       - name: Check build changes
+        if: matrix.node-version == 18
         run: |
           bash -c "[[ ! \"`git status --porcelain `\" ]] || (echo 'Please recompile and commit the assets, see the section \"Show changes on failure\" for details' && exit 1)"
 
