@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@umijs/fabric": "^3.0.0",
-    "@vercel/ncc": "^0.27.0",
+    "@vercel/ncc": "^0.34.0",
     "prettier": "^2.2.1"
   }
 }
