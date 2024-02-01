@@ -1,4 +1,5 @@
 {
+  "name": "@skjnldsv/check-actor-permission",
   "main": "src/main.js",
   "scripts": {
     "build": "ncc build",
