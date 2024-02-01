@@ -1,5 +1,6 @@
 {
   "name": "@skjnldsv/check-actor-permission",
+  "description": "Check actor permission for whomever triggered the workflow",
   "main": "src/main.js",
   "scripts": {
     "build": "ncc build",
