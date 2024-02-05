@@ -23,7 +23,7 @@
     "actions-util": "^1.0.0"
   },
   "devDependencies": {
-    "@umijs/fabric": "^3.0.0",
+    "@umijs/fabric": "^4.0.1",
     "@vercel/ncc": "^0.38.1",
     "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
